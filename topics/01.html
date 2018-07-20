@@ -1,0 +1,108 @@
+<html>
+
+<body>
+
+  <nav id="navbar" class="navbar navbar-fixed-top card" style="background-color:#2F5A78;">
+    <div class="container" style="height:100%">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+        <ul class="nav navbar-nav navbar-left">
+	<li><a style="padding-top:25px; padding-right:0px; background-color:#2F5A78;"  href="/"> 
+	<i class="fa fa-arrow-left" style="color:#FFF;"></i></a>
+	</li>
+	<li><span><h2 style="padding-top:10px; color:#FFF;">Topics</h2></span></li>
+        </ul>
+     	<ul class="nav navbar-nav navbar-right" style="padding: 0px 20px 0px 0px;"><li><input type="text" id="search" name="search" placeholder="Search.."></li><li>&nbsp;<input type="button" style="margin-top:10px;" class="btn btn-success btn-lg" id="searchbtn" value="Search" onclick="search();" /></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container"> 
+
+    <div class="row">
+     <!-- <h2>Topics</h2>
+      <hr><br>
+      <!-- Start Loop -->
+
+      <div class="col-md-4 col-sm-6 col-xs-12 topic-tile">
+        <div class="fade-in-animation-0">
+
+          <div class="panel panel-default">
+            <a href="/java-tutorial">
+              <div class="panel-heading topic-bg" style="background-color:#1199BA;">
+                <p class="panel-title">
+                  <img class="img-responsive" src="img/topics/java.png">
+                </p>
+              </div>
+            </a>
+            <div class="panel-body">
+              <p class="topic-color">TOPIC</p>
+              <a href="/java-tutorial" class="title topic-title bold-text">Core Java</a>
+              <p class="desc topic-desc">Learn about the fundamentals and core concepts of the Java programming language.</p>
+
+            </div>
+          </div>
+        </div>
+       </div>
+
+       <div class="col-md-4 col-sm-6 col-xs-12 topic-tile">
+        <div class="fade-in-animation-0">
+
+          <div class="panel panel-default">
+            <a href="/javascript-tutorial">
+              <div class="panel-heading topic-bg" style="background-color:#f7df1e;">
+                <p class="panel-title">
+                  <img class="img-responsive" src="/img/topics/javascript.png">
+                </p>
+              </div>
+            </a>
+            <div class="panel-body">
+              <p class="topic-color">TOPIC</p>
+              <a href="/javascript-tutorial" class="title topic-title bold-text">JavaScript</a>
+              <p class="desc topic-desc">Learn the fundamentals and core concepts of the Javascript programming language.</p>
+            </div>
+          </div>
+        </div>
+       </div>
+
+       <div class="col-md-4 col-sm-6 col-xs-12 topic-tile">
+        <div class="fade-in-animation-0">
+
+          <div class="panel panel-default">
+            <a href="/sql-tutorial">
+              <div class="panel-heading topic-bg" style="background-color:#58558E;">
+                <p class="panel-title">
+                  <img class="img-responsive" src="/img/topics/sql.png">
+                </p>
+              </div>
+            </a>
+            <div class="panel-body">
+              <p class="topic-color">TOPIC</p>
+              <a href="/sql-tutorial" class="title topic-title bold-text">SQL</a>
+              <p class="desc topic-desc">Learn about the most popular database language based on tuple relational calculus and algebra.</p>
+            </div>
+          </div>
+        </div>
+       </div>
+
+      <!-- End Loop -->
+    </div>
+  </div>
+      <script src="https://www.google-analytics.com/analytics.js" async=""></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="/js/app.js"></script>
+
+<script type="text/javascript">
+//
+
+function search() {
+var txt = $('#search').val();
+//$( "div:contains("+txt+")" ).css( "text-decoration", "underline" );
+$(".topic-tile").hide();
+$(".topic-tile:contains("+txt+")").show();
+
+}
+</script>
+</body>
+
+</html>

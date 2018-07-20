@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Topics | Brains Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon image_src" href="/img/favicon.ico">
+  <link rel="canonical"  href="https://brainsbot.github.io">
+  <link rel="stylesheet" href="/css/bootstrap.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/font-awesome.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+
+</head>
+
+<body>
+
+<div id="sidenavbar" style="height: 100%;" class="col-md-3">
+ <h3 style="margin-left:20px;">All Topics</h3><br>
+  <button class="btn bttn active" value="01">Programming Languages</button><br>
+  <button class="btn bttn" value="02">Programming Tools</button><br>
+</div>
+
+<div class="container"> 
+<div class="row">
+
+<div id="container"></div><br><br><br>
+</div>
+</div>
+<div id="footer"></div>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script src="/js/app.js"></script>
+
+<script type="text/javascript">
+ $(function(){
+	$("#container").load("topics/01.html");
+  	$("#footer").load("/footer.html"); 
+	});
+
+var header = document.getElementById("sidenavbar");
+var btns = header.getElementsByClassName("bttn");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    var val = document.getElementsByClassName("active")[0].value;
+    $("#container").load("topics/"+val+".html");
+  });
+}
+
+</script>
+
+</body>
+
+</html>
