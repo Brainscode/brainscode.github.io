@@ -255,6 +255,8 @@
       <!-- End Loop -->
     </div>
   </div>
+<div id="footer"></div>
+
   <script src="https://www.google-analytics.com/analytics.js" async=""></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/js/app.js"></script>
@@ -269,7 +271,14 @@ $(".topic-tile").hide();
 $(".topic-tile:contains("+txt+")").show();
 
 }
+
+ $(function(){
+  	$("#footer").load("/footer.html"); 
+	});
+
 </script>
+
+
 </body>
 
 </html>
