@@ -41,12 +41,6 @@ var getUrl = window.location.href;
 var url = new URL(getUrl);
 var active = url.searchParams.get("active");
 
-if document.getElementsByClassName("bttn").value == active {
- 
-  document.getElementsByClassName("bttn").className += " active";
-
-}
-
  $(function(){
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
@@ -56,6 +50,10 @@ var header = document.getElementById("sidenavbar");
 var btns = header.getElementsByClassName("bttn");
 
 for (var i = 0; i < btns.length; i++) {
+
+	if btns[i].className.value == active {
+  	   btns[i].className += " active";
+	}
 
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
