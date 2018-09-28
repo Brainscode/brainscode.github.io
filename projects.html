@@ -36,8 +36,13 @@
   <script src="/js/app.js"></script>
 
 <script type="text/javascript">
+
+var getUrl = window.location.href;
+var url = new URL(getUrl);
+var active = url.searchParams.get("active");
+
  $(function(){
-	$("#container").load("projects/01.html");
+	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
 	});
 
