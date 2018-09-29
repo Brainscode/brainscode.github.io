@@ -41,12 +41,11 @@ var getUrl = window.location.href;
 var url = new URL(getUrl);
 var active = url.searchParams.get("active");
 
-if active == null {
-active = "01";
-}
+$(function(){
 
- $(function(){
-
+   if (active == null) {
+      active = "01"; 
+   }
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
 });
