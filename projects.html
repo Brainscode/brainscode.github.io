@@ -41,15 +41,16 @@ var getUrl = window.location.href;
 var url = new URL(getUrl);
 var active = url.searchParams.get("active");
 
-if window.location.href == "https://brainscode.github.io/projects" {
-
-	window.location.href = "https://brainscode.github.io/projects?active=01";
-}
 
  $(function(){
+
+	if window.location.href == "https://brainscode.github.io/projects" {
+	   window.location.href = "https://brainscode.github.io/projects?active=01";
+	}
+
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
-	});
+});
 
 var header = document.getElementById("sidenavbar");
 var btns = header.getElementsByClassName("bttn");
