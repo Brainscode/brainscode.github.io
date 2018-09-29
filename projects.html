@@ -45,6 +45,11 @@ $(function(){
 
    if (active == null) {
       active = "01"; 
+   } else {
+    $("bttn").each(function(){
+         if($(this).value == active)
+         $(this).parent().addClass("active");
+    })
    }
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
