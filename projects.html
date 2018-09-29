@@ -18,7 +18,7 @@
 
 <div id="sidenavbar" style="height: 100%;" class="col-md-3">
  <h3 style="margin-left:20px;">All Projects</h3><br>
-  <button class="btn bttn" value="01">Web/Graphic Designs</button><br>
+  <button class="btn bttn active" value="01">Web/Graphic Designs</button><br>
   <button class="btn bttn" value="02">Open Source Solutions</button><br>
   <button class="btn bttn" value="03">Custom Softwares</button><br>
 </div>
@@ -51,17 +51,13 @@ var btns = header.getElementsByClassName("bttn");
 
 for (var i = 0; i < btns.length; i++) {
 
-	if btns[i].className.value == active {
-  	   btns[i].className += " active";
-	}
-
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
     var val = document.getElementsByClassName("active")[0].value;
-    //$("#container").load("projects/"+val+".html");
-	window.location.href = "https://brainscode.github.io/projects?active="+val;
+    $("#container").load("projects/"+val+".html");
+	//window.location.href = "https://brainscode.github.io/projects?active="+val;
   });
 }
 
