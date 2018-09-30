@@ -43,11 +43,12 @@ var active 	= url.searchParams.get("active");
 var header 	= document.getElementById("sidenavbar");
 var btns 	= header.getElementsByClassName("bttn");
 
+if (active == null) {
+    active = "01"; 
+}
+
 $(function(){
 
-   if (active == null) {
-      active = "01"; 
-   }
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
 });
