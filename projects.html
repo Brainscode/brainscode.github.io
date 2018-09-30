@@ -37,28 +37,27 @@
 
 <script type="text/javascript">
 
-var getUrl = window.location.href;
-var url = new URL(getUrl);
-var active = url.searchParams.get("active");
+var getUrl 	= window.location.href;
+var url 	= new URL(getUrl);
+var active 	= url.searchParams.get("active");
+var header 	= document.getElementById("sidenavbar");
+var btns 	= header.getElementsByClassName("bttn");
 
 $(function(){
 
    if (active == null) {
       active = "01"; 
-   } else {
-    document.getElementsByClassName("bttn").each(function(){
-         if($(this).value == active)
-         $(this).addClass("active");
-    })
    }
 	$("#container").load("projects/"+active+".html");
   	$("#footer").load("/footer.html"); 
 });
 
-var header = document.getElementById("sidenavbar");
-var btns = header.getElementsByClassName("bttn");
 
 for (var i = 0; i < btns.length; i++) {
+
+if (btns[i].value == active) {
+    btns[i].className += " active";
+}
 
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
