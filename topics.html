@@ -12,13 +12,21 @@
   <link rel="stylesheet" href="/css/font-awesome.css" />
   <link rel="stylesheet" href="/css/app.css" />
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8316630111743572",
+    enable_page_level_ads: true
+  });
+</script>
+
 </head>
 
 <body>
 
 <div id="sidenavbar" style="height: 100%;" class="col-md-3">
  <h3 style="margin-left:20px;">All Topics</h3><br>
-  <button class="btn bttn active" value="01">Programming Languages</button><br>
+  <button class="btn bttn" value="01">Programming Languages</button><br>
   <button class="btn bttn" value="02">Programming Tools</button><br>
 </div>
 
@@ -35,33 +43,42 @@
   <script src="/js/app.js"></script>
 
 <script type="text/javascript">
- $(function(){
-	$("#container").load("topics/01.html");
-  	$("#footer").load("/footer.html"); 
-	});
 
-var header = document.getElementById("sidenavbar");
-var btns = header.getElementsByClassName("bttn");
+var getUrl 	= window.location.href;
+var url 	= new URL(getUrl);
+var active 	= url.searchParams.get("active");
+var header 	= document.getElementById("sidenavbar");
+var btns 	= header.getElementsByClassName("bttn");
+
+if (active == null) {
+    active = "01"; 
+}
+
+$(function(){
+
+	$("#container").load("topics/"+active+".html");
+  	$("#footer").load("/footer.html"); 
+});
+
 
 for (var i = 0; i < btns.length; i++) {
+
+if (btns[i].value == active) {
+    btns[i].className += " active";
+}
+
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
     var val = document.getElementsByClassName("active")[0].value;
     $("#container").load("topics/"+val+".html");
+	//window.location.href = "https://brainscode.github.io/topics?active="+val;
   });
 }
 
 </script>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8316630111743572",
-    enable_page_level_ads: true
-  });
-</script>
 </body>
 
 </html>
